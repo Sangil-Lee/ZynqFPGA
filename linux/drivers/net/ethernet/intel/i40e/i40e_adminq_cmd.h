@@ -1532,12 +1532,12 @@ I40E_CHECK_STRUCT_LEN(0x20, i40e_aqc_query_switching_comp_bw_config_resp);
  * (indirect 0x041D)
  */
 struct i40e_aqc_configure_partition_bw_data {
-	__le16	pf_valid_bits;
+	__le16	pf_valid_bits[2];
 	u8	min_bw[16];      /* guaranteed bandwidth */
 	u8	max_bw[16];      /* bandwidth limit */
 };
 
-I40E_CHECK_STRUCT_LEN(0x22, i40e_aqc_configure_partition_bw_data);
+I40E_CHECK_STRUCT_LEN(0x24, i40e_aqc_configure_partition_bw_data);
 
 /* Get and set the active HMC resource profile and status.
  * (direct 0x0500) and (direct 0x0501)
@@ -1866,7 +1866,7 @@ I40E_CHECK_CMD_LENGTH(i40e_aqc_nvm_config_write);
 #define I40E_AQ_ANVM_FEATURE		0
 #define I40E_AQ_ANVM_IMMEDIATE_FIELD	(1 << FEATURE_OR_IMMEDIATE_SHIFT)
 struct i40e_aqc_nvm_config_data_feature {
-	__le16 feature_id;
+	__le16 feature_id[2];
 #define I40E_AQ_ANVM_FEATURE_OPTION_OEM_ONLY		0x01
 #define I40E_AQ_ANVM_FEATURE_OPTION_DWORD_MAP		0x08
 #define I40E_AQ_ANVM_FEATURE_OPTION_POR_CSR		0x10
@@ -1874,7 +1874,7 @@ struct i40e_aqc_nvm_config_data_feature {
 	__le16 feature_selection;
 };
 
-I40E_CHECK_STRUCT_LEN(0x6, i40e_aqc_nvm_config_data_feature);
+I40E_CHECK_STRUCT_LEN(0x8, i40e_aqc_nvm_config_data_feature);
 
 struct i40e_aqc_nvm_config_data_immediate_field {
 	__le32 field_id;

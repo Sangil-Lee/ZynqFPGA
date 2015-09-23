@@ -349,6 +349,9 @@ struct v4l2_subdev_video_ops {
 			     const struct v4l2_mbus_config *cfg);
 	int (*s_rx_buffer)(struct v4l2_subdev *sd, void *buf,
 			   unsigned int *size);
+	//++silee
+	int (*enum_frameintervals)(struct v4l2_subdev *sd, struct v4l2_frmivalenum *interval);
+	int (*enum_framesizes)(struct v4l2_subdev *sd, struct v4l2_frmsizeenum *fsize);
 };
 
 /*
