@@ -1,0 +1,7 @@
+2015_07_13
+Linux SHA:18efa1b2849bae36d0c46ce6fd1c8492395d2da9
+Linux branch:2014_R2
+Linux repository:https://github.com/analogdevicesinc/linux.git
+HDL SHA:58ed90c83346892d4a6002a3717cfb6a7df3f2e1
+HDL branch:hdl_2014_r2
+HDL repository:https://github.com/analogdevicesinc/hdl.git
